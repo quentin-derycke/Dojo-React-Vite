@@ -1,37 +1,11 @@
-import { useState } from 'react';
+import { useTasks } from '@/context/TaskContext';
 import { Board } from '@/components/kanban/Board';
 import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
 import { Flex } from '@/components/ui/Flex';
 
 export default function Home() {
-  const [filterText, setFilterText] = useState('');
-  const [priority, setPriority] = useState('');
-  const [tasks, setTasks] = useState([
-    { id: 1, title: 'Setup projet', status: 'todo', priority: 'primary' },
-    { id: 2, title: 'Développer layout', status: 'in-progress', priority: 'warning' },
-    { id: 3, title: 'Finaliser tâches', status: 'done', priority: 'success' },
-  ]);
-
-  // Création d'une tâche via prompt (à remplacer par un modal ensuite)
-  const handleCreate = (status) => {
-    const title = prompt('Titre de la tâche ?');
-    if (!title) return;
-    const newTask = {
-      id: Date.now(),
-      title,
-      status,
-      priority: 'info',
-    };
-    setTasks((prev) => [...prev, newTask]);
-  };
-
-  // Filtrage des tâches
-  const filteredTasks = tasks.filter((task) => {
-    const matchesText = task.title.toLowerCase().includes(filterText.toLowerCase());
-    const matchesPriority = !priority || task.priority === priority;
-    return matchesText && matchesPriority;
-  });
+    const { filteredTasks, filterText, priority, setFilterText, setPriority, status, setStatus } = useTasks();
 
   return (
     <div className="space-y-4">
@@ -49,11 +23,12 @@ export default function Home() {
             { value: 'info', label: 'Info' },
             { value: 'warning', label: 'Warning' },
             { value: 'success', label: 'Success' },
+            { value: 'error', label: 'Error' },
           ]}
         />
       </Flex>
 
-      <Board tasks={filteredTasks} onCreate={handleCreate} />
+      <Board tasks={filteredTasks} />
     </div>
   );
 }
