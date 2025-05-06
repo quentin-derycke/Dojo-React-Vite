@@ -1,17 +1,17 @@
 import { cn } from '@/lib/utils';
+import { Button } from './Button';
 
 export function Modal({ id, children }) {
   return (
     <>
-      <button className="btn btn-primary" onClick={() => document.getElementById(id).showModal()}>
-        Ajouter une tâche
-      </button>
+
       <dialog id={id} className="modal">
         <div className="modal-box">
-          {children}
           <form method="dialog" className="modal-backdrop">
-            <button className="btn">Fermer</button>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
           </form>
+          {children}
+
         </div>
       </dialog>
     </>

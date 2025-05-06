@@ -1,8 +1,11 @@
 import { Outlet } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
+import { TaskProvider } from '../../context/TaskContext';
 
 export default function AppLayout() {
-  return (
+  return (   
+     <TaskProvider>
+
     <div className="drawer lg:drawer-open">
       <input id="sidebar-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
@@ -26,5 +29,6 @@ export default function AppLayout() {
         <Sidebar />
       </div>
     </div>
+    </TaskProvider>
   );
 }
