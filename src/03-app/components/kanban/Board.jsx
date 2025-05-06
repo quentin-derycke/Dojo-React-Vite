@@ -1,7 +1,7 @@
 import { Flex } from '@/components/ui/Flex';
 import { Column } from './Column';
 
-export function Board({ tasks, onCreate }) {
+export function Board({ tasks }) {
   const statuses = ['todo', 'in-progress', 'done'];
 
   // Regroupe les tâches par statut
@@ -17,7 +17,6 @@ export function Board({ tasks, onCreate }) {
           key={status}
           title={status}
           tasks={groupedTasks[status]}
-          onCreate={() => onCreate(status)}
         />
       ))}
     </Flex>

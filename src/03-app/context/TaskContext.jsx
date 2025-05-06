@@ -76,6 +76,7 @@ export function TaskProvider({ children }) {
         deleteTask,
         setFilterText,
         setPriority,
+        setStatus
       }}
     >
       {children}
