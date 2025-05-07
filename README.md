@@ -28,12 +28,13 @@ Le projet sera accessible sur : [http://localhost:5173](http://localhost:5173)
 ## 📁 Structure du projet
 
 ```
-src/
+03-app/
  ┣ components/        → Composants UI (TaskCard, Column...)
  ┣ context/           → Stockage global avec useContext + 
  ┣ hooks/             → Hooks personnalisés
  ┣ pages/             → Page principale avec le tableau Kanban
  ┣ lib/               → Faire appel au librarie
+ ┣ routes/            → Définitions des routes
  ┣ App.jsx            → Composant principal
  ┗ main.jsx           → Entrée de l’application
 ```
