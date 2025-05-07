@@ -1,7 +1,7 @@
 
 # 🧩 React Kanban Challenge – Code Dojo
 
-Bienvenue dans cet atelier React ! Le but est de créer un tableau **Kanban** type Jira en 2h, en utilisant les hooks React, DaisyUI pour l’interface, et une structure en composants feature-based modulaire simple.
+Bienvenue dans ce Code Dojo ! Le but est de créer un tableau **Kanban** type Jira en 2h, en utilisant les hooks React, DaisyUI pour l’interface, et une structure en composants feature-based modulaire simple.
 
 ---
 
