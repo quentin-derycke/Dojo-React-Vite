@@ -49,8 +49,8 @@ Créer une application Kanban avec les fonctionnalités suivantes :
 - ✏️ Modifier une tâche
 - ❌ Supprimer une tâche
 - 🔄 Changer et définir le statut de la tâche
-- Filtrer les Taches
-- Priorité des tache
+- Filtrer les Tâches
+- Priorité des Tâches
 - Persistances des données dans le localStorage
 
 
